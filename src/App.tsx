@@ -1,16 +1,18 @@
 import Button from "./components/Button/Button";
-import { ContainerDiv } from "./styles";
+import { ContainerDiv, HeaderDiv, HeaderText, SubHeaderDiv } from "./styles";
+import Logo from "./assets/svgs/Logo.svg";
 
 const App = () => {
   return (
     <ContainerDiv>
-      <Button
-        text="hello you guys"
-        variant="secondary2"
-        onClick={() => {
-          console.log("clicou no botao");
-        }}
-      />
+      <HeaderDiv>
+        <img src={Logo} />
+        <SubHeaderDiv>
+          <HeaderText>HOME</HeaderText>
+          <HeaderText>PORTFOLIO</HeaderText>
+          <HeaderText>CONTATO</HeaderText>
+        </SubHeaderDiv>
+      </HeaderDiv>
     </ContainerDiv>
   );
 };
