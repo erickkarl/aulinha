@@ -16,7 +16,11 @@ export interface ButtonProps {
 const Button = ({ variant = "primary", text, onClick }: ButtonProps) => {
   if (variant === "primary") {
     return (
-      <PrimaryButton onClick={onClick}>
+      <PrimaryButton
+        onClick={() => {
+          onClick();
+        }}
+      >
         <img src={ButtonIcon} />
         <ButtonFont>{text}</ButtonFont>
       </PrimaryButton>
