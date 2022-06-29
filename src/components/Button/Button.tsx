@@ -1,4 +1,6 @@
+import { useState } from "react";
 import ButtonIcon from "../../assets/svgs/ButtonIcon.svg";
+import ButtonIcon2 from "../../assets/svgs/twitter-dark.svg";
 import {
   ButtonFont,
   ButtonFont2,
@@ -14,6 +16,8 @@ export interface ButtonProps {
 }
 
 const Button = ({ variant = "primary", text, onClick }: ButtonProps) => {
+  const [imagem, setImagem] = useState(ButtonIcon);
+
   if (variant === "primary") {
     return (
       <PrimaryButton
@@ -21,7 +25,7 @@ const Button = ({ variant = "primary", text, onClick }: ButtonProps) => {
           onClick();
         }}
       >
-        <img src={ButtonIcon} />
+        <img src={imagem} />
         <ButtonFont>{text}</ButtonFont>
       </PrimaryButton>
     );

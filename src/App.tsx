@@ -13,6 +13,12 @@ const App = () => {
           <HeaderText>CONTATO</HeaderText>
         </SubHeaderDiv>
       </HeaderDiv>
+      <Button
+        text="Oxi"
+        onClick={() => {
+          console.log("cliquei");
+        }}
+      />
     </ContainerDiv>
   );
 };
