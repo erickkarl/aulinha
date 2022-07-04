@@ -1,25 +1,19 @@
-import Button from "./components/Button/Button";
-import { ContainerDiv, HeaderDiv, HeaderText, SubHeaderDiv } from "./styles";
-import Logo from "./assets/svgs/Logo.svg";
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import { Main } from "./pages/Main/Main";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
 const App = () => {
   return (
-    <ContainerDiv>
-      <HeaderDiv>
-        <img src={Logo} />
-        <SubHeaderDiv>
-          <HeaderText>HOME</HeaderText>
-          <HeaderText>PORTFOLIO</HeaderText>
-          <HeaderText>CONTATO</HeaderText>
-        </SubHeaderDiv>
-      </HeaderDiv>
-      <Button
-        text="Oxi"
-        onClick={() => {
-          console.log("cliquei");
-        }}
-      />
-    </ContainerDiv>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />}>
+          <Route path="home" element={<Home />} />
+          <Route path="portfolio" element={<Portfolio />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
 

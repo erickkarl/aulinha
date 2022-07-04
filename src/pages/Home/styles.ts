@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import { theme } from "./theme";
 
-export const ContainerDiv = styled.div`
-  padding: 64px 108px 0px 165px;
-`;
+export const ContainerDiv = styled.div``;
 
 export const HeaderDiv = styled.div`
   display: flex;

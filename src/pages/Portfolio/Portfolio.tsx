@@ -8,14 +8,6 @@ import Bookmark from "../../assets/images/bookmark/image-bookmark-preview-1.jpg"
 const Porfolio = () => {
   return (
     <ContainerDiv>
-      <HeaderDiv>
-        <img src={Logo} />
-        <SubHeaderDiv>
-          <HeaderText>HOME</HeaderText>
-          <HeaderText>PORTFOLIO</HeaderText>
-          <HeaderText>CONTATO</HeaderText>
-        </SubHeaderDiv>
-      </HeaderDiv>
       <ImageCard
         image={Manage}
         position="right"
