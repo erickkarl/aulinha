@@ -1,31 +1,36 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-export interface CounterState {
-  value: number;
-}
-
-const initialState: CounterState = {
-  value: 10,
+const loginData = {
+  rightUser: "erickkarl",
+  rightPassword: "senha",
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+export interface LoginPayload {
+  user: string;
+  password: string;
+}
+export interface AuthState {
+  signedIn: boolean;
+}
+
+const initialState: AuthState = {
+  signedIn: false,
+};
+
+export const authSlice = createSlice({
+  name: "auth",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    login: (state, action: PayloadAction<LoginPayload>) => {
+      state.signedIn =
+        action.payload.user === loginData.rightUser &&
+        action.payload.password === loginData.rightPassword;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { login } = authSlice.actions;
 
-export default counterSlice.reducer;
+export default authSlice.reducer;
