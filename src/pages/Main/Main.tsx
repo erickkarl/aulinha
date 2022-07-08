@@ -36,6 +36,8 @@ export const Main = () => {
       {/* Outlet */}
       <Outlet />
 
+      <p>footer</p>
+
       {/* soakos */}
     </ContainerDiv>
   );

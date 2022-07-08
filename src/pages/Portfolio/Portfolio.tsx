@@ -4,8 +4,12 @@ import Logo from "../../assets/svgs/Logo.svg";
 import ImageCard from "./components/ImageCard/ImageCard";
 import Manage from "../../assets/images/manage/image-manage-preview-1.jpg";
 import Bookmark from "../../assets/images/bookmark/image-bookmark-preview-1.jpg";
+import { useSelector } from "react-redux";
+import { selectNumero } from "../../redux/auth/authSelectors";
+import { RootState } from "../../redux/store";
 
 const Porfolio = () => {
+  const numero = useSelector((state: RootState) => state.counter.value);
   return (
     <ContainerDiv>
       <ImageCard
@@ -13,7 +17,7 @@ const Porfolio = () => {
         position="right"
         text="Esse projeto me fez criar uma landing page responsiza de acordo com o design que recebi. Usei HTML5, CSS Grid e JavaScript para as áreas interativas, como o slider de testimoniais."
         title="Manage"
-        buttonText="VER PROJETO"
+        buttonText={`${numero}`}
         onClick={() => {
           console.log("clicou no botao");
         }}
